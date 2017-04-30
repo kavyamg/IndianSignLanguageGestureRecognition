@@ -145,7 +145,7 @@ namespace feature
         private void openFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-          /*  List<String> imagesList = new List<String>();
+            List<String> imagesList = new List<String>();
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
             DialogResult result = folderDialog.ShowDialog();
@@ -155,9 +155,9 @@ namespace feature
                 DirectoryInfo directoryName = new DirectoryInfo(folderDialog.SelectedPath);
                 string dname = directoryName.ToString();
                 Console.WriteLine(directoryName);
-                string[] path = Directory.GetFiles(dname, "*");
+                string[] paths = Directory.GetFiles(dname, "*");
                 List<Bitmap> images = new List<Bitmap>();
-                foreach(var path in path)
+                foreach(var path in paths)
                 {
                     Bitmap image = new Bitmap(path);
                     images.Add(image);
@@ -168,12 +168,12 @@ namespace feature
                 List<double[]> features = new List<double[]>();
                 foreach(var image in images)
                 {
-                    double[] features = automate(image);
+                    double[] feature = doitallToolStripMenuItem_Click();
                     features.Add(feature);
                 }
 
                 double[][] featuresArray = features.ToArray();
-            } */
+            } 
         }
 
         private void cannyEdgeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,13 +244,15 @@ namespace feature
         private void doitallToolStripMenuItem_Click(object sender, EventArgs e)
         {
             skinColorToolStripMenuItem_Click(sender, e);
-           
+
             fillHoleToolStripMenuItem_Click(sender, e);
             blobToolStripMenuItem_Click(sender, e);
-            aNDToolStripMenuItem_Click(sender,e);
+            aNDToolStripMenuItem_Click(sender, e);
             cannyEdgeToolStripMenuItem_Click(sender, e);
 
-
         }
+
+
+       
     }
 }
